@@ -1,10 +1,17 @@
 syntax = "proto3";
 
-option go_package = "./serv;balancer";
+option go_package = "./server;server";
 
 service Balancer{
-  rpc Get (NilBody) returns (NilBody);
+  rpc GetUrl (RequestBody) returns (ResponseBody);
 }
 
-message NilBody{
+message ResponseBody{
+  string url = 1;
 }
+
+message RequestBody {
+  int64 increment = 1;
+  string video = 2;
+}
+
