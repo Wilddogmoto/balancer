@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option go_package = "./serv;balancer";
+
+service Balancer{
+  rpc Get (NilBody) returns (NilBody);
+}
+
+message NilBody{
+}
