@@ -11,7 +11,6 @@ import (
 type Config struct {
 	CDNHost   string   `json:"cdn_host"`
 	GRPCPorts []string `json:"grpc_ports"`
-	Host      string   `json:"host"`
 }
 
 var Params Config

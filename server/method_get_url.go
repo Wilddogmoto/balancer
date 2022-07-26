@@ -18,7 +18,7 @@ func (c *GRPCServer) GetUrl(ctx context.Context, in *RequestBody) (*ResponseBody
 		})
 	)
 
-	logg.Warnf("request for port: %s id: %d ", c.addr, in.GetIncrement())
+	logg.Warnf("request for port: %s id call: %d ", c.addr, in.GetIncrement())
 
 	if in.GetVideo() == "" {
 		return nil, nil

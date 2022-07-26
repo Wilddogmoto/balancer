@@ -13,44 +13,6 @@ import (
 	"time"
 )
 
-//func main() {
-//
-//	var (
-//		conn *grpc.ClientConn
-//		err  error
-//		resp *server.ResponseBody
-//		//address = "static:///localhost:8080,localhost:8081,localhost:8082"
-//	)
-//
-//	resolver.SetDefaultScheme("dns")
-//
-//	conn, err = grpc.Dial("dns://dns_server/localhost:44300",
-//		grpc.WithTransportCredentials(insecure.NewCredentials()),
-//		grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy":"round_robin"}`),
-//	)
-//	if err != nil {
-//		log.Fatalf("error on grpc dial: %v", err)
-//	}
-//
-//	client := server.NewBalancerClient(conn)
-//
-//	var count int
-//
-//	for {
-//		count++
-//
-//		ctx, _ := context.WithTimeout(context.Background(), 2500*time.Millisecond)
-//
-//		resp, err = client.GetUrl(ctx, &server.RequestBody{Video: "http://s1.origin-cluster/video/123/xcg2djHckad.m3u8"})
-//		if err != nil {
-//			log.Fatalf("error request: %v", err)
-//		}
-//
-//		log.Printf("count: %d URL: %s", count, resp.GetUrl())
-//
-//	}
-//}
-
 const (
 	scheme      = "test"
 	serviceName = "balancer"
@@ -96,7 +58,7 @@ func main() {
 			logg.Fatalf("error request: %v", err)
 		}
 
-		logg.Infof("count: %d URL: %s", id, resp.GetUrl())
+		logg.Infof("count call: %d URL: %s", id, resp.GetUrl())
 
 		//time.Sleep(1 * time.Second)
 	}

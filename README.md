@@ -15,7 +15,12 @@
 ```
  grpcurl -plaintext -d '{\"increment\": 1,\"video\":\"http://s1.origin-cluster/video/123/xcg2djHckad.m3u8\"}' localhost:44300 Balancer/GetUrl
 ```
-### Тестовый клинет находится в `client.go`, использует настройки `.env`
+### Тестовый клиент находится в `client.go`, использует настройки `.env`. запускаем его после запуска `main.go`
 ```
  go run client.go
+```
+
+### Тестирование с помощью GHz запуск через `ghz.go`
+```
+ go run ghz.go
 ```
