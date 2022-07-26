@@ -72,8 +72,6 @@ func main() {
 		"module": "grpc_client",
 	})
 
-	resolver.SetDefaultScheme("dns")
-
 	conn, err = grpc.Dial(fmt.Sprintf("%s:///%s", scheme, serviceName),
 		grpc.WithTransportCredentials(insecure.NewCredentials()),
 		grpc.WithDefaultServiceConfig(`{"loadBalancingConfig": [{"round_robin":{}}]}`),
@@ -103,9 +101,6 @@ func main() {
 		//time.Sleep(1 * time.Second)
 	}
 }
-
-// Following is an example name resolver implementation. Read the name
-// resolution example to learn more about it.
 
 type (
 	exampleResolverBuilder struct{}
